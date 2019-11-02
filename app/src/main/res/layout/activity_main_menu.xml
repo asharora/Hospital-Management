@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="0dp"
+    android:layout_marginTop="0dp"
+    android:layout_marginRight="0dp"
+    android:background="@drawable/hospitall"
+    android:orientation="vertical"
+    tools:context=".MainMenu">
+
+
+    <Button
+        android:id="@+id/newpatient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="50dp"
+        android:background="#d67601"
+        android:text="New patient"
+        android:textColor="#fff" />
+
+    <Button
+        android:id="@+id/GetAppointment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="50dp"
+        android:background="#d67601"
+        android:text="Get Appointment"
+        android:textColor="#fff" />
+
+    <Button
+        android:id="@+id/PatientDetial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="50dp"
+        android:background="#d67601"
+        android:text="Patient Detail"
+        android:textColor="#fff" />
+
+    <Button
+        android:id="@+id/MedicalReport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="50dp"
+        android:background="#d67601"
+        android:text="Medical Report"
+        android:textColor="#fff" />
+
+    <Button
+        android:id="@+id/contactus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="50dp"
+        android:background="#d67601"
+        android:text="Contact us"
+        android:textColor="#fff" />
+</LinearLayout>
