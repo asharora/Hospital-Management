@@ -10,6 +10,13 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+//import com.google.firebase.FirebaseApp;
+//import com.google.firebase.database.FirebaseDatabase;
+//import com.google.firebase.iid.FirebaseInstanceIdReceiver;
+
 import java.util.Random;
 
 public class NewPatient extends AppCompatActivity {
@@ -18,6 +25,10 @@ public class NewPatient extends AppCompatActivity {
     RadioGroup newpatient_gender;
     RadioButton newpatient_male,newpatient_female;
     Button newpatient_submit;
+    private FirebaseDatabase mDatabase;
+    private DatabaseReference mRef;
+
+//    private Firebase mRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,13 +62,13 @@ public class NewPatient extends AppCompatActivity {
 
                          if(newpatient_male.isChecked())
                          {
-                             Toast.makeText(NewPatient.this,"male",Toast.LENGTH_SHORT).show();
-                             patient=new Patient(newpatient_name.getText().toString(),newpatient_phone.getText().toString(),userID+"","male");
+                           //  Toast.makeText(NewPatient.this,"male",Toast.LENGTH_SHORT).show();
+                             patient=new Patient(newpatient_name.getText().toString(),newpatient_phone.getText().toString(),userID+"","male",newpatient_email.getText().toString(),newpatient_age.getText().toString());
                          }
                          else if(newpatient_female.isChecked())
                          {
-                             Toast.makeText(NewPatient.this,"Female",Toast.LENGTH_SHORT).show();
-                             patient=new Patient(newpatient_name.getText().toString(),newpatient_phone.getText().toString(),userID+"","female");
+                             //Toast.makeText(NewPatient.this,"Female",Toast.LENGTH_SHORT).show();
+                             patient=new Patient(newpatient_name.getText().toString(),newpatient_phone.getText().toString(),userID+"","female",newpatient_email.getText().toString(),newpatient_age.getText().toString());
                          }
                          else
                          {
@@ -77,13 +88,47 @@ public class NewPatient extends AppCompatActivity {
 //                         patient=new Patient(newpatient_name.getText().toString(),newpatient_phone.getText().toString(),userID+"",  radioButton.getText().toString());
 
 
-                   ApplicationPatient.patients.add(patient);
-                      Toast.makeText(NewPatient.this,"UserID = "+userID+"\nName = "+patient.getName()+"\nPhone Number = "+patient.getPhone()+"\nGender = "+patient.getGender(),Toast.LENGTH_SHORT).show();
+                       ApplicationPatient.patients.add(patient);
+                       Toast.makeText(NewPatient.this,"UserID = "+userID+"\nName = "+patient.getName()+"\nPhone Number = "+patient.getPhone()+"\nGender = "+patient.getGender(),Toast.LENGTH_SHORT).show();
+
+
+                       clearText();
+                       addFirebase(patient);
                      }
+
+
+                    // Patient_Details.personAdapter.notifyDataSetChanged();
+
+
+
 
 
 
             }
         });
+    }
+
+    public void addFirebase(Patient patient)
+    {
+        mDatabase=FirebaseDatabase.getInstance();
+        mRef=mDatabase.getReference();
+        DatabaseReference mRef1=mRef.child("User_ID - "+patient.getUserIdno());
+
+        mRef1.child("Phone").setValue(patient.getPhone());
+        mRef1.child("Gender").setValue(patient.getGender());
+        mRef1.child("Age").setValue(patient.getAge());
+        mRef1.child("Email").setValue(patient.getEmail());
+        mRef1.child("Name").setValue(patient.getName());
+
+
+    }
+
+    public void clearText()
+    {
+        newpatient_gender.clearCheck();
+        newpatient_email.setText("");
+        newpatient_name.setText("");
+        newpatient_age.setText("");
+        newpatient_phone.setText("");
     }
 }

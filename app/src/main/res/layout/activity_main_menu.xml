@@ -12,6 +12,13 @@
     tools:context=".MainMenu">
 
 
+    <TextView
+        android:id="@+id/clientname"
+        android:layout_width="236dp"
+        android:layout_height="45dp"
+        android:text=""
+        android:textColor="#fff"/>
+
     <Button
         android:id="@+id/newpatient"
         android:layout_width="match_parent"

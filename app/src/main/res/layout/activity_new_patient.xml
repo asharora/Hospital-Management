@@ -7,7 +7,7 @@
     android:layout_marginLeft="0dp"
     android:layout_marginTop="0dp"
     android:layout_marginRight="0dp"
-    android:background="@drawable/hospitall"
+
     android:orientation="vertical"
     tools:context=".NewPatient">
 
@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:textColor="#fff"
+                android:inputType="text"
                 android:hint="Name"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
@@ -44,8 +44,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:textColor="#fff"
-                android:inputType="textEmailAddress"
+
+                android:inputType="text"
                 android:hint="Email" />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
-                android:textColor="#fff"
+
                 android:textColorHint="#fff"
                 android:hint="Age" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -75,7 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:textColor="#fff"
+                 android:inputType="text"
                 android:hint="phone number"/>
         </com.google.android.material.textfield.TextInputLayout>
         <RelativeLayout
@@ -88,7 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Gender"
-                android:textColor="#fff"
+
                 android:textSize="20dp"
                 android:fontFamily="sans-serif"/>
             <RadioGroup
@@ -102,14 +102,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="male"
-                    android:textColor="#fff"
+
                     />
                 <RadioButton
                     android:id="@+id/female_radio_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text = "female"
-                    android:textColor="#fff"
+
                     />
             </RadioGroup>
         </RelativeLayout>
